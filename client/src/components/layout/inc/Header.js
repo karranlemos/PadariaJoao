@@ -9,8 +9,9 @@ export default () => (
                 <a href="/" className="home-item nav-item">Padaria do João</a>
                 <div className="nav-items">
                     <a href="/" className="nav-item">Início</a>
-                    <a href="/produtos" className="nav-item">Produtos</a>
                     <a href="/sobre" className="nav-item">Sobre</a>
+                    <a href="/produtos" className="nav-item">Produtos</a>
+                    <a href="/contato" className="nav-item">Contato</a>
                 </div>
             </div>
         </nav>
