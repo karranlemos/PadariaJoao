@@ -1,0 +1,110 @@
+// Navbar & Header
+$nav-bg-color: #000;
+$nav-color: #fff;
+$nav-height: 75px;
+$nav-mobile-max-width: 400px;
+$mobile-max-width: 700px;
+
+
+
+header#nav-header {
+    height: $nav-height;
+}
+
+nav#nav {
+    position: fixed;
+    height: $nav-height;
+    width: 100%;
+    margin: 0;
+
+    background-color: $nav-bg-color;
+    color: $nav-color;
+
+
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+
+        .nav-items {
+            background-color: $nav-bg-color;
+            display: flex;
+        }    
+    
+
+        .nav-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            min-width: 100px;
+    
+            color: $nav-color;
+            text-decoration: none;
+
+            &:hover {
+                background-color: lighten($nav-bg-color, 4);
+            }
+        }
+
+        .nav-mobile-button {
+            display: none;
+
+            background: url('icons/Hamburger-white.svg') no-repeat center;
+            background-size: 28%;
+            
+            width: $nav-height;
+            min-width: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+    nav#nav .container {
+
+        .nav-items {
+            display: none;
+            
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            max-width: $nav-mobile-max-width;
+
+            transform: translateX(100%);
+
+            flex-direction: column;
+
+            height: calc(100vh - #{$nav-height});
+
+            transition: transform .4s ease-in-out;
+        }
+
+        .nav-item {
+            height: $nav-height;
+
+            &.nav-mobile-button {
+                display: block;
+            }
+        }
+    }
+
+    nav#nav.show .container .nav-items {
+        display: initial;
+    }
+
+    nav#nav.show.translate {
+        .container {
+            .nav-items {
+                transform: translateX(0);
+            }
+
+            .nav-mobile-button {
+                background: url('icons/Multiplication_Sign-white.svg') no-repeat center;
+                background-size: 28%;
+            }
+        }
+    }
+}
