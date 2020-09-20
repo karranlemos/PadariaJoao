@@ -12,8 +12,8 @@ export default () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Index}/>
-        <Route exact path="/produtos" component={About}/>
-        <Route exact path="/sobre" component={Products}/>
+        <Route exact path="/about" component={About}/>
+        <Route exact path="/products" component={Products}/>
         <Route render={(props) => <Error {...props} error={"Page Not Found"}/>}/>
       </Switch>
     </BrowserRouter>
